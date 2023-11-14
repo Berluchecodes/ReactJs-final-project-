@@ -29,7 +29,7 @@ const truncateString = (str, num) => {
           <img className='w-full h-full object-cover' src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt={movie?.title} />
           <div className='absolute w-full top-[20%] p-4 md:p-8'>
                 <h1 className='text-3xl md:text-5xl'>{movie?.title}</h1>
-            <p className='text-gray-800 text-sm '>Released: {movie?.release_date}</p>
+            <p className='text-gray-800 mb-3 mt-3 text-sm '>Released: {movie?.release_date}</p>
             <p className='w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-black font-semibold'>{truncateString(movie?.overview, 200)}</p>
             </div>
         </div>
