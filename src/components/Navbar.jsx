@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
 const Links = [
     {name:'HOME', link:'/'},
-    {name:'ABOUT', link:'/about'},
     {name:'MOVIES', link:'/movies'},
 ]
 
