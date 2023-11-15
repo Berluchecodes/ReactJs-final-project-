@@ -26,7 +26,7 @@ const truncateString = (str, num) => {
     <div className={`w-full h-[550px] text-black ${show ? '' : 'hidden'}`}>
         <div className='w-full h-[450px]'>
           <div className='absolute w-full h-[450px] bg-gradient-to-r from-blue-400'/>
-          <img className='w-full h-full object-cover' src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt={movie?.title} />
+          <img className='w-full h-full object-cover' src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`} alt={movie?.title} />
           <div className='absolute w-full top-[20%] p-4 md:p-8'>
                 <h1 className='text-3xl mr-2 md:text-5xl'>{movie?.title}</h1>
             <p className='text-gray-800 mb-3 mt-3 text-sm '>Released: {movie?.release_date}</p>
