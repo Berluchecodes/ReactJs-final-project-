@@ -6,7 +6,7 @@ const Info = ({ movieInfo }) => {
   const imageUrl = `https://image.tmdb.org/t/p/w500/${movieInfo.poster_path}`;
 
   return (
-    <div className='flex flex-col sm:flex-row justify-evenly mb-5'>
+    <div className='flex flex-col sm:flex-row justify-evenly m-1'>
       <div className='w-full sm:w-[50%] lg:w-[40%] xl:w-[35%] mb-5 sm:mb-0'>
         <img
           className='w-full h-auto object-cover '
