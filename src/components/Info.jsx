@@ -7,9 +7,9 @@ const Info = ({ movieInfo }) => {
 
   return (
     <div className='flex flex-col sm:flex-row justify-evenly mb-5'>
-      <div className='w-full sm:w-[50%] lg:w-[40%] xl:w-[35%] mb-5 sm:mb-0'>
+      <div className='w-full sm:w-[50%] lg:w-[40%] xl:w-[35%] mb-5 sm:mb-0 mt-3 ml-3'>
         <img
-          className='w-full h-auto object-cover'
+          className='w-full h-auto object-cover '
           src={imageUrl}
           alt={movieInfo?.title}
           
