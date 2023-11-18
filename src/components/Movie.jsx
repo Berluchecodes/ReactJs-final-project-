@@ -6,8 +6,10 @@ const Movie = ({ item }) => {
 
   const imageUrl = item?.poster_path
     ? `https://image.tmdb.org/t/p/w500/${item.poster_path}`
-    : 'URL_TO_DEFAULT_IMAGE';
-
+    : ''
+        
+        
+ 
   return (
     <div className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'>
       <Link to={`/movieinfo/${item.id}`}>

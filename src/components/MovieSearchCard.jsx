@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const MovieSearchCard = ({ item }) => {
   
 
-  const imageUrl = item.poster_path ? `https://image.tmdb.org/t/p/w500/${item.poster_path}` : 'URL_TO_DEFAULT_IMAGE';
+  const imageUrl = item.poster_path ? `https://image.tmdb.org/t/p/w500/${item.poster_path}` : '';
 
   return (
     <div className='ml-5 w-full sm:w-[140px] xs:w-[120px] md:w-[200px] lg:w-[240px] xl:w-[280px] inline-block cursor-pointer mx-2 lg:mx-0 mb-5'>
