@@ -50,7 +50,7 @@ const Info = ({ movieInfo }) => {
       <div className='w-full sm:w-[50%] lg:w-[60%] xl:w-[65%] m-5'>
         <h2 className='font-bold text-blue-400 mb-3 text-lg sm:text-2xl lg:text-3xl xl:text-4xl'>
           {titleLoading ?  <div
-            className='w-full h-0'
+            className='w-[50%] h-0'
             style={{
               paddingBottom: 20, // Assuming a 16:9 aspect ratio
               backgroundColor: '#ccc', // Placeholder color
@@ -61,7 +61,7 @@ const Info = ({ movieInfo }) => {
         <p className='mb-3 text-sm sm:text-md lg:text-lg xl:text-xl'>
           <span className='font-semibold'>Release Date: </span>{' '}
           {releaseDateLoading ? <div
-            className='w-full h-0'
+            className='w-[60%] h-0'
             style={{
               paddingBottom: 20, // Assuming a 16:9 aspect ratio
               backgroundColor: '#ccc', // Placeholder color
@@ -73,7 +73,7 @@ const Info = ({ movieInfo }) => {
           {overviewLoading ? <div
             className='w-full h-0'
             style={{
-              paddingBottom: 20, // Assuming a 16:9 aspect ratio
+              paddingBottom: 70, // Assuming a 16:9 aspect ratio
               backgroundColor: '#ccc', // Placeholder color
             }}
           ></div> : movieInfo.overview}
@@ -81,7 +81,7 @@ const Info = ({ movieInfo }) => {
         <p className='mb-3 text-sm sm:text-md lg:text-lg xl:text-xl'>
           <span className='font-semibold'>IMDB Score: </span>{' '}
           {scoreLoading ? <div
-            className='w-full h-0'
+            className='w-[30%] h-0'
             style={{
               paddingBottom: 20, // Assuming a 16:9 aspect ratio
               backgroundColor: '#ccc', // Placeholder color
