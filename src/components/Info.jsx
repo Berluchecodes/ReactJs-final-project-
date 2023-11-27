@@ -10,8 +10,7 @@ const Info = ({ movieInfo }) => {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      setLoading(false); // Set loading to false after 2 seconds
-      // Set individual loading states to false for each piece of information
+      setLoading(false);
       setImageLoading(false);
       setTitleLoading(false);
       setReleaseDateLoading(false);
@@ -20,9 +19,9 @@ const Info = ({ movieInfo }) => {
     }, 2000);
 
     return () => {
-      clearTimeout(timeoutId); // Cleanup to avoid memory leaks
+      clearTimeout(timeoutId);
     };
-  }, []); // Empty dependency array ensures useEffect runs only once
+  }, []);
 
   const imageUrl = `https://image.tmdb.org/t/p/w500/${movieInfo.poster_path}`;
 
@@ -30,12 +29,11 @@ const Info = ({ movieInfo }) => {
     <div className='flex flex-col sm:flex-row justify-evenly m-1'>
       <div className='w-full sm:w-[50%] lg:w-[40%] xl:w-[35%] mb-5 sm:mb-0'>
         {loading ? (
-          // Skeleton loader while image is loading
           <div
             className='w-full h-0'
             style={{
-              paddingBottom: 'calc(100%)', // Assuming a 16:9 aspect ratio
-              backgroundColor: '#ccc', // Placeholder color
+              paddingBottom: 'calc(100% / (16/9))',
+              backgroundColor: '#ccc',
             }}
           ></div>
         ) : (
@@ -43,50 +41,41 @@ const Info = ({ movieInfo }) => {
             className='w-full h-auto object-cover'
             src={imageUrl}
             alt={movieInfo?.title}
-            onLoad={() => setImageLoading(false)} // Set image loading state to false after image loads
+            onLoad={() => setImageLoading(false)}
           />
         )}
       </div>
       <div className='w-full sm:w-[50%] lg:w-[60%] xl:w-[65%] m-5'>
         <h2 className='font-bold text-blue-400 mb-3 text-lg sm:text-2xl lg:text-3xl xl:text-4xl'>
-          {titleLoading ?  <div
-            className='w-[50%] h-0'
-            style={{
-              paddingBottom: 20, // Assuming a 16:9 aspect ratio
-              backgroundColor: '#ccc', // Placeholder color
-            }}
-          ></div>
-         : movieInfo.title}
+          {titleLoading ? (
+            <span className='loading-placeholder'></span>
+          ) : (
+            movieInfo.title
+          )}
         </h2>
         <p className='mb-3 text-sm sm:text-md lg:text-lg xl:text-xl'>
           <span className='font-semibold'>Release Date: </span>{' '}
-          {releaseDateLoading ? <div
-            className='w-[60%] h-0'
-            style={{
-              paddingBottom: 20, // Assuming a 16:9 aspect ratio
-              backgroundColor: '#ccc', // Placeholder color
-            }}
-          ></div>: movieInfo.release_date}
+          {releaseDateLoading ? (
+            <span className='loading-placeholder'></span>
+          ) : (
+            movieInfo.release_date
+          )}
         </p>
         <p className='mb-3 text-sm sm:text-md lg:text-lg xl:text-xl'>
           <span className='font-semibold'>Overview: </span>{' '}
-          {overviewLoading ? <div
-            className='w-full h-0'
-            style={{
-              paddingBottom: 70, // Assuming a 16:9 aspect ratio
-              backgroundColor: '#ccc', // Placeholder color
-            }}
-          ></div> : movieInfo.overview}
+          {overviewLoading ? (
+            <span className='loading-placeholder'></span>
+          ) : (
+            movieInfo.overview
+          )}
         </p>
         <p className='mb-3 text-sm sm:text-md lg:text-lg xl:text-xl'>
           <span className='font-semibold'>IMDB Score: </span>{' '}
-          {scoreLoading ? <div
-            className='w-[30%] h-0'
-            style={{
-              paddingBottom: 20, // Assuming a 16:9 aspect ratio
-              backgroundColor: '#ccc', // Placeholder color
-            }}
-          ></div>:  movieInfo.vote_average}
+          {scoreLoading ? (
+            <span className='loading-placeholder'></span>
+          ) : (
+            movieInfo.vote_average
+          )}
         </p>
       </div>
     </div>
